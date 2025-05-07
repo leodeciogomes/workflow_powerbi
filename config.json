@@ -2,12 +2,13 @@
     "develop": {
         "spnSecret": "DEV",
         "capacity": "none",
-        "workspace": "[LG] Playground - TEST",
+        "workspace": "[LG] Playground - DEV",
         "adminUPNs": "",
         "semanticModelsParameters": {
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
-        }
+        },
+        "reportName": "[LG] Report name - DEV"
     },
     "main": {
         "spnSecret": "PRD",
@@ -17,6 +18,7 @@
         "semanticModelsParameters": {
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
-        }
+        },
+        "reportName": "[LG] Report name - DEV"
     }
 }

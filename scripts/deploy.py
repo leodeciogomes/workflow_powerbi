@@ -60,10 +60,13 @@ semanticmodel_id = deploy_item(
 )
 
 # Deploy reports
+report_name = configEnv.get("reportName", "Project")  # fallback para "Project" se não definido
+
 for report_path in glob.glob("src/*.Report"):
     deploy_item(
         report_path,
         workspace_name=workspace_name,
+        display_name=report_name,  # Aqui você define o nome desejado
         find_and_replace={
             ("definition.pbir", r"\{[\s\S]*\}"): json.dumps(
                 {
