@@ -10,6 +10,7 @@ It demonstrates the use of a CI/CD scenario for Microsoft Power BI PRO projects 
 
 
 ## Quick Links  
+
 - Video demo of this repo: https://youtu.be/sgVqrOUgXro  
 - How to get Service Principal: https://youtu.be/IFp1Aingnmw  
 - Learn Git and GitHub for MS Fabric and Power BI: https://youtu.be/wFimCGpndOc  
@@ -17,7 +18,6 @@ It demonstrates the use of a CI/CD scenario for Microsoft Power BI PRO projects 
 
 ## Instalation 
 
-- Fork this repo  
 - Create a copy of `.env.example` and rename to `.env`  and fill with the SPN secrets    
 - Configure the same SPN secrets on GitHub Actions if you want CD
 
