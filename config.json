@@ -8,7 +8,7 @@
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
         },
-        "report": "[LG] Report name - DEV"
+        "reportName": "[LG] Report name - DEV"
     },
     "main": {
         "spnSecret": "PRD",
