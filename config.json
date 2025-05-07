@@ -2,8 +2,8 @@
     "develop": {
         "spnSecret": "DEV",
         "capacity": "none",
-        "workspace": "FP_Analysis_DEV",
-        "adminUPNs": "9322eb4a-4132-4bd1-8df1-5cd3d1d2400b",
+        "workspace": "[LG] Playground - DEV",
+        "adminUPNs": "41831e2c-e937-4c3c-bd68-3882701aa834",
         "semanticModelsParameters": {
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
@@ -12,8 +12,8 @@
     "main": {
         "spnSecret": "PRD",
         "capacity": "none",
-        "workspace": "FP_Analysis_PRD",
-        "adminUPNs": "9322eb4a-4132-4bd1-8df1-5cd3d1d2400b",
+        "workspace": "[LG] Playground - PRD",
+        "adminUPNs": "c21460f4-dfff-4d5e-8b66-106ea65feca3",
         "semanticModelsParameters": {
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
