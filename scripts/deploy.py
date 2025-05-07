@@ -23,6 +23,7 @@ environment = args.environment
 capacity_name = args.capacity
 workspace_name = args.workspace
 admin_upns = args.admin_upns.split(",") if args.admin_upns else []
+display_name = args.reportName
 
 config = read_pbip_jsonfile(args.config_file)
 configEnv = config[args.environment]

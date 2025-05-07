@@ -164,6 +164,7 @@ def read_pbip_jsonfile(path):
 
 def deploy_item(
     src_path,
+    report_name,
     workspace_name,
     item_type: str = None,
     item_name: str = None,
@@ -175,6 +176,7 @@ def deploy_item(
     Deploys an item to a specified workspace.
     Args:
         src_path (str): The source path of the item to be deployed.
+        report_name (str): The name of the report that will be deployed.
         workspace_name (str): The name of the workspace where the item will be deployed.
         item_type (str, optional): The type of the item. If not provided, it will be inferred from the platform data.
         item_name (str, optional): The name of the item. If not provided, it will be inferred from the platform data.
