@@ -49,6 +49,7 @@ workspace_id = create_workspace(workspace_name=workspace_name, capacity_name=cap
 # Deploy semantic model
 semanticmodel_id = deploy_item(
     "src/Project.SemanticModel",
+    item_name=item_name,
     workspace_name=workspace_name,
     find_and_replace={
         (
@@ -67,7 +68,7 @@ for report_path in glob.glob("src/*.Report"):
     deploy_item(
         report_path,
         workspace_name=workspace_name,
-        item_name=item_name,  # Aqui você define o nome desejado
+        item_name=item_name,
         find_and_replace={
             ("definition.pbir", r"\{[\s\S]*\}"): json.dumps(
                 {
