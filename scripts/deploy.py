@@ -10,6 +10,7 @@ parser.add_argument("--config-file", default="./config.json")
 parser.add_argument("--capacity", default=None, help="Capacity name")
 parser.add_argument("--workspace", default=None, help="Workspace name")
 parser.add_argument("--admin-upns", default=None, help="Comma-separated list of admin UPNs")
+parser.add_argument("--item-name", default=None, help="Name of the report to deploy")
 
 args = parser.parse_args()
 
@@ -23,6 +24,7 @@ environment = args.environment
 capacity_name = args.capacity
 workspace_name = args.workspace
 admin_upns = args.admin_upns.split(",") if args.admin_upns else []
+item_name = args.item_name
 
 config = read_pbip_jsonfile(args.config_file)
 configEnv = config[args.environment]
@@ -31,6 +33,7 @@ configEnv = config[args.environment]
 capacity_name = capacity_name or configEnv.get("capacity")
 workspace_name = workspace_name or configEnv["workspace"]
 admin_upns = admin_upns or configEnv.get("adminUPNs", "").split(",")
+item_name = item_name or configEnv["reportName"]
 
 semanticmodel_parameters = configEnv.get("semanticModelsParameters", None)
 server = semanticmodel_parameters.get("SqlServerInstance", None)
@@ -46,6 +49,7 @@ workspace_id = create_workspace(workspace_name=workspace_name, capacity_name=cap
 # Deploy semantic model
 semanticmodel_id = deploy_item(
     "src/Project.SemanticModel",
+    item_name=item_name,
     workspace_name=workspace_name,
     find_and_replace={
         (
@@ -64,6 +68,7 @@ for report_path in glob.glob("src/*.Report"):
     deploy_item(
         report_path,
         workspace_name=workspace_name,
+        item_name=item_name,
         find_and_replace={
             ("definition.pbir", r"\{[\s\S]*\}"): json.dumps(
                 {
