@@ -4,9 +4,8 @@ table medidas
 	measure Placeholder =
 			
 			// Medida criada para setup inicial do versionamento do .PBIR
-			// Alterar medida após inicio do desenvolvimento
+			// Alterar medida após inicio do desenvolvimento do projeto
 			COUNTROWS ( dim_calendario )
-		
 		formatString: 0
 		lineageTag: 54087694-35c5-4edd-895b-8a4e13686140
 
