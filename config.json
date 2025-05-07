@@ -3,7 +3,7 @@
         "spnSecret": "DEV",
         "capacity": "none",
         "workspace": "[LG] Playground - DEV",
-        "adminUPNs": "41831e2c-e937-4c3c-bd68-3882701aa834",
+        "adminUPNs": "34aa285d-1f90-4493-87a1-e5545662f9fa",
         "semanticModelsParameters": {
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
@@ -13,7 +13,7 @@
         "spnSecret": "PRD",
         "capacity": "none",
         "workspace": "[LG] Playground - PRD",
-        "adminUPNs": "c21460f4-dfff-4d5e-8b66-106ea65feca3",
+        "adminUPNs": "34aa285d-1f90-4493-87a1-e5545662f9fa",
         "semanticModelsParameters": {
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
