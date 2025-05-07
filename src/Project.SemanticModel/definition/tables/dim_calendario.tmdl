@@ -1,0 +1,247 @@
+table dim_calendario
+	lineageTag: 4cd8bbb6-fac4-4fb8-bbc0-a63758fad14e
+	dataCategory: Time
+
+	column data
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 9a5c9264-863a-462c-a9e4-2f79e9a73b81
+		summarizeBy: none
+		sourceColumn: data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bdde9c7-443d-4d18-a261-afd2493b08e6
+		summarizeBy: none
+		sourceColumn: ano
+
+		annotation SummarizationSetBy = User
+
+	column mesNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 25e28149-2824-423d-8f66-e24d5dc9ecd4
+		summarizeBy: none
+		sourceColumn: mesNum
+
+		annotation SummarizationSetBy = User
+
+	column mesNome
+		dataType: string
+		lineageTag: 011dd946-28c2-4e30-8f8b-48f2eae550dc
+		summarizeBy: none
+		sourceColumn: mesNome
+		sortByColumn: mesNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column mesAbrev
+		dataType: string
+		lineageTag: 78e2d46a-53e8-4ecb-8197-e7adf68f25db
+		summarizeBy: none
+		sourceColumn: mesAbrev
+		sortByColumn: mesNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column diaMesNum
+		dataType: int64
+		formatString: 0
+		lineageTag: d0607fdc-71aa-4deb-8cd8-7486e6cd3857
+		summarizeBy: none
+		sourceColumn: diaMesNum
+
+		annotation SummarizationSetBy = User
+
+	column anoMesNum
+		dataType: int64
+		formatString: 0
+		lineageTag: e357cffb-a422-4d77-9aec-e63ea938c96c
+		summarizeBy: none
+		sourceColumn: anoMesNum
+
+		annotation SummarizationSetBy = User
+
+	column anoMesAbrev
+		dataType: string
+		lineageTag: 666bbb22-0155-4c64-9cde-7d041cf48f03
+		summarizeBy: none
+		sourceColumn: anoMesAbrev
+		sortByColumn: anoMesNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestreNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 83de0f4c-33c3-4de1-a2eb-acb0b8fdb88a
+		summarizeBy: none
+		sourceColumn: trimestreNum
+
+		annotation SummarizationSetBy = User
+
+	column trimestreAbrev
+		dataType: string
+		lineageTag: 720ac23f-fcd2-4d4b-9302-df4828f8cace
+		summarizeBy: none
+		sourceColumn: trimestreAbrev
+
+		annotation SummarizationSetBy = Automatic
+
+	column semanaMes
+		dataType: string
+		lineageTag: 924ebc30-f0ad-4ef2-a161-6891570cc1f1
+		summarizeBy: none
+		sourceColumn: semanaMes
+
+		annotation SummarizationSetBy = Automatic
+
+	column semestreAbrev
+		dataType: string
+		lineageTag: fd902ef7-fd06-40ef-8d77-57d609304e98
+		summarizeBy: none
+		sourceColumn: semestreAbrev
+
+		annotation SummarizationSetBy = Automatic
+
+	column semanaAnoNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d387593-4a1a-49ee-a6be-81ec275a8b06
+		summarizeBy: none
+		sourceColumn: semanaAnoNum
+
+		annotation SummarizationSetBy = User
+
+	column anoSemanaAnoNum
+		dataType: string
+		lineageTag: 45a674cb-beb8-49f5-9e1f-514358d09ce8
+		summarizeBy: none
+		sourceColumn: anoSemanaAnoNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column diaSemanaNum
+		dataType: int64
+		formatString: 0
+		lineageTag: b88bd1fa-304b-4035-aaa5-413b90e9c1fb
+		summarizeBy: none
+		sourceColumn: diaSemanaNum
+
+		annotation SummarizationSetBy = User
+
+	column diaSemanaNome
+		dataType: string
+		lineageTag: 3baae086-d0b9-4431-8098-c5fea463e180
+		summarizeBy: none
+		sourceColumn: diaSemanaNome
+		sortByColumn: diaSemanaNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column diaSemanaAbrev
+		dataType: string
+		lineageTag: faa3a950-5412-47ad-81c2-560eab52f4cf
+		summarizeBy: none
+		sourceColumn: diaSemanaAbrev
+		sortByColumn: diaSemanaNum
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataFutura
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 51c453af-a53f-4ce7-8640-e740cc855889
+		summarizeBy: none
+		sourceColumn: dataFutura
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_calendario = m
+		mode: import
+		queryGroup: dimensoes
+		source = ```
+				let 
+				// Substituir a coluna referenciada em "Datas" de acordo com as tabelas do dataset, remover a DataInicio e DataFim estáticas, e descomentar o resto do código.
+				    DataInicio = #date(2025, 1, 1),
+				    DataFim = #date(2025, 12, 31),
+				
+				//     Datas = List.Buffer(List.Distinct(nomeDaTabela[nomeDaColuna])),
+				
+				//     MenorData = List.Min(Datas),
+				//     MaiorData = List.Max(Datas), 
+				
+				//     DataInicio = Date.StartOfYear(MenorData),
+				//     DataFim = Date.EndOfYear(MaiorData),
+				
+				    Dias = Duration.Days(DataFim - DataInicio) +1,
+				    ListarDatas = List.Dates(DataInicio, Dias, #duration(1,0,0,0)),
+				    Tabela = #table(
+				        type table[
+				            data = date,
+				            ano = Int64.Type,
+				            mesNum = Int64.Type,
+				            mesNome = text,
+				            mesAbrev = text,
+				            diaMesNum = Int64.Type,
+				            anoMesNum = Int64.Type,
+				            anoMesAbrev = text,
+				            trimestreNum = Int64.Type,
+				            trimestreAbrev = text,
+				            semanaMes = text,
+				            semestreAbrev = text,
+				            semanaAnoNum = Int64.Type,
+				            anoSemanaAnoNum = text,
+				            diaSemanaNum = Int64.Type,
+				            diaSemanaNome = text,
+				            diaSemanaAbrev = text,
+				            dataFutura = logical
+				        ],
+				        List.Transform(
+				            ListarDatas,
+				            each {
+				                _,
+				                Date.Year(_),
+				                Date.Month(_),
+				                Text.Proper( Date.MonthName(_)),
+				                Text.Proper(Text.Start(Date.MonthName(_), 3)),
+				                Date.Day(_),
+				                Date.Year(_) * 100 + Date.Month(_),
+				                Text.Proper(Text.Start(Date.MonthName(_), 3)) & "-" & Text.End(Text.From(Date.Year(_)), 2),
+				                Date.QuarterOfYear(_),
+				                Text.From(Date.QuarterOfYear(_)) & "º Trim ",
+				                Text.From( Number.RoundUp( Date.Month(_)/6,0)) & "º Sem",
+				                Text.From(Date.WeekOfMonth(_)) & "º Semana",
+				                Date.WeekOfYear(_),
+				                Text.From(Date.Year(_)) & Text.PadStart(Text.From(Date.WeekOfYear(_)), 2, "0"),
+				                Date.DayOfWeek(_),
+				                Text.Proper(Date.DayOfWeekName(_)),
+				                Text.Proper(Text.Start(Date.DayOfWeekName(_), 3)),
+				                _ >= Date.From(DateTime.LocalNow())
+				            }
+				        )
+				    )
+				in
+				  Tabela
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

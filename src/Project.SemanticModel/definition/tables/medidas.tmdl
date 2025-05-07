@@ -1,0 +1,33 @@
+table medidas
+	lineageTag: fe7935fd-2148-4f3f-9a58-0d88e8c725b1
+
+	measure Placeholder =
+			
+			// Medida criada para setup inicial do versionamento do .PBIR
+			// Alterar medida após inicio do desenvolvimento
+			COUNTROWS ( dim_calendario )
+		
+		formatString: 0
+		lineageTag: 54087694-35c5-4edd-895b-8a4e13686140
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: f6992a21-ac8c-41cf-8a9e-b58ae0c23eed
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition medidas = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
