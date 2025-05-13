@@ -1,0 +1,162 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "85054b151524e04e15ec",
+  "position": {
+    "x": 398.08564231738035,
+    "y": 192.2418136020151,
+    "z": 1000,
+    "height": 504.18136020151132,
+    "width": 870.528967254408,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "Table"
+                }
+              },
+              "queryRef": "metadados_colunas.Table",
+              "nativeQueryRef": "Table"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "metadados_colunas.Name",
+              "nativeQueryRef": "Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "metadados_colunas.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "DataType"
+                }
+              },
+              "queryRef": "metadados_colunas.DataType",
+              "nativeQueryRef": "DataType"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "Expression"
+                }
+              },
+              "queryRef": "metadados_colunas.Expression",
+              "nativeQueryRef": "Expression"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "IsUnique"
+                }
+              },
+              "queryRef": "metadados_colunas.IsUnique",
+              "nativeQueryRef": "IsUnique"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_colunas"
+                    }
+                  },
+                  "Property": "IsKey"
+                }
+              },
+              "queryRef": "metadados_colunas.IsKey",
+              "nativeQueryRef": "IsKey"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "347.47108504878804D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "metadados_colunas.Description"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Colunas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -19,6 +19,6 @@
             "SqlServerInstance": "",
             "SqlServerDatabase": ""
         },
-        "reportName": "[LG] Report name - DEV"
+        "reportName": "[LG] Report name - PRD"
     }
 }

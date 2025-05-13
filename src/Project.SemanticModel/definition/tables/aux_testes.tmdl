@@ -1,0 +1,77 @@
+table aux_testes
+	lineageTag: 7f35fd94-5c1b-432c-8c82-0e5b6867a9a6
+
+	column test_name
+		dataType: string
+		lineageTag: 6ca46218-4981-4753-8487-c25622f27e66
+		summarizeBy: none
+		sourceColumn: test_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column query_m
+		dataType: string
+		lineageTag: 0c2c00bd-3767-4a48-8f71-9a73eb3a8f97
+		summarizeBy: none
+		sourceColumn: query_m
+
+		annotation SummarizationSetBy = Automatic
+
+	column expected_value
+		dataType: string
+		lineageTag: 8d5d559f-8a4d-4f95-a2a0-8ea339011221
+		summarizeBy: none
+		sourceColumn: expected_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_value
+		dataType: string
+		lineageTag: 941c3f4a-8395-44e0-a590-55eced31fb97
+		summarizeBy: none
+		sourceColumn: actual_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column result
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 87664805-ec49-45d3-b1e7-9b4e0f27779f
+		summarizeBy: none
+		sourceColumn: result
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 9d241c0e-c5b1-475f-a93a-d4ff6fef95e4
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition aux_testes = m
+		mode: import
+		source =
+				let
+				    env = [
+				        Table.RowCount = Table.RowCount,
+				        Table.SelectRows = Table.SelectRows,
+				        List.Count = List.Count,
+				        List.Distinct = List.Distinct,
+				        List.Sum = List.Sum,
+				        dim_calendario = dim_calendario
+				    ],
+				    Source = Json.Document(File.Contents(base_path & "\tests\unit\test_cases.json")),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"test_name", "category", "query_m", "expected_value"}, {"test_name", "category","query_m", "expected_value"}),
+				    #"Add column | actual_value" = Table.AddColumn(#"Expanded Column", "actual_value", each try Expression.Evaluate([query_m], env) otherwise "ERROR"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Add column | actual_value",{{"test_name", type text}, {"expected_value", type text}, {"query_m", type text}, {"actual_value", type text}, {"category", type text}}),
+				    #"Add column | result" = Table.AddColumn(#"Changed Type", "result", each [expected_value] = [actual_value], type logical)
+				in
+				    #"Add column | result"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

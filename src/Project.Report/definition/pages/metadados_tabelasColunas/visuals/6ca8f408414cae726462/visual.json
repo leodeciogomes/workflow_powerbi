@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "6ca8f408414cae726462",
+  "position": {
+    "x": 29.0176322418136,
+    "y": 192.2418136020151,
+    "z": 0,
+    "height": 504.18136020151132,
+    "width": 343.67758186397981,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_tabelas"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "metadados_tabelas.Name",
+              "nativeQueryRef": "Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_tabelas"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "metadados_tabelas.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_tabelas"
+                    }
+                  },
+                  "Property": "StorageMode"
+                }
+              },
+              "queryRef": "metadados_tabelas.StorageMode",
+              "nativeQueryRef": "StorageMode"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "metadados_tabelas"
+                  }
+                },
+                "Property": "Name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "118.76811961433687D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "metadados_tabelas.Description"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabelas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

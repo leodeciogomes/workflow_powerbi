@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "73104d290daa9119e7bc",
+  "position": {
+    "x": 681.00755667506292,
+    "y": 248.46347607052894,
+    "z": 4002,
+    "height": 223.97984886649871,
+    "width": 343.67758186397981,
+    "tabOrder": 4002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "ToTable"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.ToTable",
+              "nativeQueryRef": "ToTable"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabela destino'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
