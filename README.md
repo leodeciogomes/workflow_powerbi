@@ -8,7 +8,7 @@ It demonstrates the use of a CI/CD scenario for Microsoft Power BI PRO projects 
 
 ## Quick Links  
 
-- Video demo of this repo: https://youtu.be/sgVqrOUgXro  
+- Video demo of the reference repo: https://youtu.be/sgVqrOUgXro  
 - How to get Service Principal: https://youtu.be/IFp1Aingnmw  
 - Learn Git and GitHub for MS Fabric and Power BI: https://youtu.be/wFimCGpndOc  
 - Video for conceptual reference for automated testing (technical methodology has changed): https://youtu.be/PL7Xw2dvVrE
