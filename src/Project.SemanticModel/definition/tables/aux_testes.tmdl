@@ -54,6 +54,7 @@ table aux_testes
 		mode: import
 		source =
 				let
+				    // Ambiente de avaliação com todas as dependências da linguagem M
 				    env = [
 				        Table.RowCount = Table.RowCount,
 				        Table.SelectRows = Table.SelectRows,
@@ -62,14 +63,42 @@ table aux_testes
 				        List.Sum = List.Sum,
 				        dim_calendario = dim_calendario
 				    ],
-				    Source = Json.Document(File.Contents(base_path & "\tests\unit\test_cases.json")),
-				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-				    #"Expanded Column" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"test_name", "category", "query_m", "expected_value"}, {"test_name", "category","query_m", "expected_value"}),
-				    #"Add column | actual_value" = Table.AddColumn(#"Expanded Column", "actual_value", each try Expression.Evaluate([query_m], env) otherwise "ERROR"),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Add column | actual_value",{{"test_name", type text}, {"expected_value", type text}, {"query_m", type text}, {"actual_value", type text}, {"category", type text}}),
-				    #"Add column | result" = Table.AddColumn(#"Changed Type", "result", each [expected_value] = [actual_value], type logical)
+				
+				    // Testes unitários desejados
+				    testCases = {
+				        [
+				            test_name = "Contagem de linhas da tabela calendário",
+				            category = "Dimensões",
+				            expected_value = 365,
+				            query_m = "Table.RowCount(dim_calendario)"
+				        ],
+				        [
+				            test_name = "Contagem de meses distintos",
+				            category = "Dimensões",
+				            expected_value = 12,
+				            query_m = "List.Count(List.Distinct(dim_calendario[mesNum]))"
+				        ]
+				    },
+				
+				    // Converter para tabela
+				    TestTable = Table.FromRecords(testCases),
+				
+				    // Avaliar string [query_m] interpretando como linguagem M
+				    WithActual = Table.AddColumn(TestTable, "actual_value", each try Expression.Evaluate([query_m], env) otherwise "ERROR"),
+				
+				    // Alterar tipo
+				    Typed = Table.TransformColumnTypes(WithActual, {
+				        {"test_name", type text},
+				        {"category", type text},
+				        {"query_m", type text},
+				        {"expected_value", type text},
+				        {"actual_value", type text}
+				    }),
+				
+				    // Comparar resultados
+				    WithResult = Table.AddColumn(Typed, "result", each [expected_value] = [actual_value], type logical)
 				in
-				    #"Add column | result"
+				    WithResult
 
 	annotation PBI_NavigationStepName = Navigation
 

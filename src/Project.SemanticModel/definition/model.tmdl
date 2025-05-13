@@ -18,7 +18,7 @@ queryGroup fatos
 
 	annotation PBI_QueryGroupOrder = 2
 
-annotation PBI_QueryOrder = ["dim_calendario","medidas","aux_testes","base_path"]
+annotation PBI_QueryOrder = ["dim_calendario","medidas","aux_testes"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
