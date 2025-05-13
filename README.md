@@ -38,8 +38,10 @@ $ pip install -r requirements.txt
 
 
 ## Automated tests
-- Define your tests, functions and expected results in `tests\unit\test_cases.json`
-- Add function and table dependencies in the "env" step of the M code in `src\Project.SemanticModel\definition\tables\aux_testes.tmdl`
+- Specify all required functions and table references in the env step of the M code at:
+src\Project.SemanticModel\definition\tables\aux_testes.tmdl
+- Define your test cases — including the M expression and expected result — in the testCases step of the same file.
+
 
 Accurate specification of dependencies is critical for the correct interpretation of M language scripts within the Power BI editor. Incorrect or incomplete dependency declarations can lead to failures in automated testing processes.
 
