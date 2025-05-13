@@ -1,0 +1,162 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "c23ccdb10cbc162eaa68",
+  "position": {
+    "x": 29.0176322418136,
+    "y": 472.44332493702768,
+    "z": 0,
+    "height": 223.97984886649871,
+    "width": 1239.5969773299748,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "FromTable"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.FromTable",
+              "nativeQueryRef": "FromTable"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "FromColumn"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.FromColumn",
+              "nativeQueryRef": "FromColumn"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "ToTable"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.ToTable",
+              "nativeQueryRef": "ToTable"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "ToColumn"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.ToColumn",
+              "nativeQueryRef": "ToColumn"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "Relationship"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.Relationship",
+              "nativeQueryRef": "Relationship"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "IsActive"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.IsActive",
+              "nativeQueryRef": "IsActive"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_relacionamentos"
+                    }
+                  },
+                  "Property": "CrossFilteringBehavior"
+                }
+              },
+              "queryRef": "metadados_relacionamentos.CrossFilteringBehavior",
+              "nativeQueryRef": "CrossFilteringBehavior"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145.47605815186466D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "metadados_relacionamentos.ToTable"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Relationships'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

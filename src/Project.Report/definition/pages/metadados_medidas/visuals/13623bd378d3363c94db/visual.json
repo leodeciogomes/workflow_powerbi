@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "13623bd378d3363c94db",
+  "position": {
+    "x": 29.0176322418136,
+    "y": 184.08060453400503,
+    "z": 5001,
+    "height": 512.34256926952139,
+    "width": 1210.5793450881611,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_medidas"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "metadados_medidas.Name",
+              "nativeQueryRef": "Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_medidas"
+                    }
+                  },
+                  "Property": "DisplayFolder"
+                }
+              },
+              "queryRef": "metadados_medidas.DisplayFolder",
+              "nativeQueryRef": "DisplayFolder"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_medidas"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "metadados_medidas.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_medidas"
+                    }
+                  },
+                  "Property": "Expression"
+                }
+              },
+              "queryRef": "metadados_medidas.Expression",
+              "nativeQueryRef": "Expression"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "metadados_medidas"
+                    }
+                  },
+                  "Property": "State"
+                }
+              },
+              "queryRef": "metadados_medidas.State",
+              "nativeQueryRef": "State"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Medidas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

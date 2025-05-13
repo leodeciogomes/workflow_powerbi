@@ -1,0 +1,140 @@
+table metadados_colunas
+	lineageTag: fe29898b-6f49-4400-b84a-147f364ce873
+
+	column Name
+		lineageTag: ae207e62-1cba-4c90-a269-91482a1978d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Table
+		lineageTag: a7d21f95-5057-4cf1-ae35-0d9829917013
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Table]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataType
+		lineageTag: c748b573-321d-401e-913a-c59430dd0635
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DataType]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataCategory
+		lineageTag: 46f406f6-b1c1-426b-b078-bb6730d8bd31
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DataCategory]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 73839d74-04c9-4148-b985-b3c9a3e979ed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsHidden]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsUnique
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 545a0426-9f62-4a28-928a-3ae82d2d57a2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsUnique]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsKey
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dd5d27fc-78ce-4773-899e-68279d0ee610
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNullable
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3f807c89-fbb5-4785-a2db-832afb951376
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [IsNullable]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Expression
+		lineageTag: b55f5fa6-8fab-4d5e-8bd6-0d82bbe38928
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Expression]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormatString
+		lineageTag: 7f7007d1-97d6-473a-a346-e74c0b323b38
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FormatString]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortByColumn
+		lineageTag: 82ae965a-a796-4d81-8493-6fcb082c026e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SortByColumn]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisplayFolder
+		lineageTag: d14a98fd-cebb-4c4f-9340-d2eea5bd3c25
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DisplayFolder]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		lineageTag: a6fb06dc-8be3-4343-abdb-ce1851cc3aee
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Description]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition metadados_colunas = calculated
+		mode: import
+		source = ```
+				
+				SELECTCOLUMNS ( 
+				    FILTER (
+				        INFO.VIEW.COLUMNS(),
+				        NOT CONTAINSSTRING ( [Table], "metadados" )
+				        && [Table] <> "medidas"
+				        && [DataCategory] <> "RowNumber"
+				    ),
+				    [Name],
+				    [Description],
+				    [Table],
+				    [DataType],
+				    [DataCategory],
+				    [IsHidden],
+				    [IsUnique],
+				    [IsKey],
+				    [IsNullable],
+				    [Expression],
+				    [FormatString],
+				    [SortByColumn],
+				    [DisplayFolder]
+				)
+				```
+
+	annotation PBI_Id = 95c93a7cbb9d4a0cb675cf2db8c5a74e
+

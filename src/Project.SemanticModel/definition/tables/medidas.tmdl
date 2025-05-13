@@ -1,13 +1,28 @@
 table medidas
 	lineageTag: fe7935fd-2148-4f3f-9a58-0d88e8c725b1
 
-	measure Placeholder =
+	/// Percentual de testes aprovados (actual = expected)
+	measure '% Testes automatizados aprovados' = ```
 			
-			// Medida criada para setup inicial do versionamento do .PBIR
-			// Alterar medida após inicio do desenvolvimento
-			COUNTROWS ( dim_calendario )
-		
-		formatString: 0
+			VAR varTestesAprovados = 
+			    CALCULATE(
+			        COUNTROWS ( aux_testes ),
+			        aux_testes[result] = TRUE()
+			    )
+			
+			VAR varTestesTotal = 
+			    COUNTROWS ( aux_testes )
+			
+			VAR varResultado = 
+			    DIVIDE ( 
+			        varTestesAprovados,
+			        varTestesTotal
+			    )
+			
+			RETURN
+			    varResultado
+			```
+		formatString: 0%;-0%;0%
 		lineageTag: 54087694-35c5-4edd-895b-8a4e13686140
 
 	column Column1

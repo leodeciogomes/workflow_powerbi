@@ -1,7 +1,9 @@
+/// Tabela dimensão calendário
 table dim_calendario
 	lineageTag: 4cd8bbb6-fac4-4fb8-bbc0-a63758fad14e
 	dataCategory: Time
 
+	/// Representa cada dia do calendário, servindo como chave primária da dimensão.
 	column data
 		dataType: dateTime
 		isKey
@@ -14,6 +16,7 @@ table dim_calendario
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	/// Ano correspondente à data, utilizado para análises anuais.
 	column ano
 		dataType: int64
 		formatString: 0
@@ -23,6 +26,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Número do mês (1 a 12), útil para ordenações cronológicas.
 	column mesNum
 		dataType: int64
 		formatString: 0
@@ -32,6 +36,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Nome completo do mês, usado para exibição em relatórios.
 	column mesNome
 		dataType: string
 		lineageTag: 011dd946-28c2-4e30-8f8b-48f2eae550dc
@@ -43,6 +48,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Abreviação de 3 letras do mês (ex: Jan, Fev), ideal para gráficos compactos.
 	column mesAbrev
 		dataType: string
 		lineageTag: 78e2d46a-53e8-4ecb-8197-e7adf68f25db
@@ -54,6 +60,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Número do dia dentro do mês (1 a 31), utilizado em análises detalhadas.
 	column diaMesNum
 		dataType: int64
 		formatString: 0
@@ -63,6 +70,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Combinação numérica de ano e mês (ex: 202501), útil para ordenação e filtros.
 	column anoMesNum
 		dataType: int64
 		formatString: 0
@@ -72,6 +80,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Combinação de mês abreviado e ano (ex: Jan-25), para exibição amigável.
 	column anoMesAbrev
 		dataType: string
 		lineageTag: 666bbb22-0155-4c64-9cde-7d041cf48f03
@@ -83,6 +92,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Número do trimestre (1 a 4), usado em análises trimestrais.
 	column trimestreNum
 		dataType: int64
 		formatString: 0
@@ -92,6 +102,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Identificação do trimestre com sufixo (ex: "1º Trim"), para exibição.
 	column trimestreAbrev
 		dataType: string
 		lineageTag: 720ac23f-fcd2-4d4b-9302-df4828f8cace
@@ -100,6 +111,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Número da semana dentro do mês (ex: "2º Semana"), útil para comparações semanais.
 	column semanaMes
 		dataType: string
 		lineageTag: 924ebc30-f0ad-4ef2-a161-6891570cc1f1
@@ -108,6 +120,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Identificação do semestre (ex: "1º Sem"), usado em análises semestrais.
 	column semestreAbrev
 		dataType: string
 		lineageTag: fd902ef7-fd06-40ef-8d77-57d609304e98
@@ -116,6 +129,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Número da semana no ano (1 a 52), usado em análises semanais.
 	column semanaAnoNum
 		dataType: int64
 		formatString: 0
@@ -125,6 +139,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Combinação de ano e número da semana (ex: 202503), para filtros únicos.
 	column anoSemanaAnoNum
 		dataType: string
 		lineageTag: 45a674cb-beb8-49f5-9e1f-514358d09ce8
@@ -133,6 +148,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Número do dia da semana (0 = Domingo, 6 = Sábado), útil para ordenações.
 	column diaSemanaNum
 		dataType: int64
 		formatString: 0
@@ -142,6 +158,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = User
 
+	/// Nome completo do dia da semana (ex: Segunda-feira), para exibição.
 	column diaSemanaNome
 		dataType: string
 		lineageTag: 3baae086-d0b9-4431-8098-c5fea463e180
@@ -153,6 +170,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Abreviação do nome do dia (ex: Seg, Ter), usada em visuais mais enxutos.
 	column diaSemanaAbrev
 		dataType: string
 		lineageTag: faa3a950-5412-47ad-81c2-560eab52f4cf
@@ -164,6 +182,7 @@ table dim_calendario
 
 		annotation SummarizationSetBy = Automatic
 
+	/// Indica se a data é no futuro (true/false), útil para filtros temporais.
 	column dataFutura
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""

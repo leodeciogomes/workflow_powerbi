@@ -1,0 +1,71 @@
+table metadados_tabelas
+	lineageTag: b5af0ba5-9df3-46a5-858b-991ed13cbe33
+
+	column Name
+		lineageTag: b6d7b62c-3922-433b-affa-eb1ee8c20741
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataCategory
+		lineageTag: 23d9ecbf-0cf1-46f8-8998-0da2a61ed8fb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DataCategory]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		lineageTag: 3362628d-b44f-4ce9-8799-1abd3ddad09f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Description]
+
+		annotation SummarizationSetBy = Automatic
+
+	column StorageMode
+		lineageTag: 6eff550c-6866-4f3f-a7c6-6e10a0b6dd53
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [StorageMode]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Expression
+		lineageTag: 580d2104-03c2-4ef8-b2d6-8253ef29106b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Expression]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		lineageTag: d898baad-0774-4efa-9b76-483ab29fd2cc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Model]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition metadados_tabelas = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS (
+				    FILTER (
+				        INFO.VIEW.TABLES(),
+				        NOT CONTAINSSTRING ( [Expression], "INFO.VIEW.")
+				        && [Name] <> "medidas"
+				    ),
+				    [Name],
+				    [DataCategory],
+				    [Description],
+				    [StorageMode],
+				    [Expression],
+				    [Model]
+				)
+
+	annotation PBI_Id = 0172a0a9aa4f437085d95fb626dceff1
+

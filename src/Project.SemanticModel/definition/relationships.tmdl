@@ -1,0 +1,4 @@
+relationship 622eb40b-f975-d003-526f-22cd919bb375
+	fromColumn: metadados_colunas.Table
+	toColumn: metadados_tabelas.Name
+
