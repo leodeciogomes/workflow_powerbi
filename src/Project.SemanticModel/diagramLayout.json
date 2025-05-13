@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 753.81185059569145,
-            "y": 125.42956433324233
+            "y": 634.45073117771653
           },
           "nodeIndex": "dim_calendario",
           "nodeLineageTag": "4cd8bbb6-fac4-4fb8-bbc0-a63758fad14e",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 1211.5337366885587,
-            "y": 245.76523540232529
+            "y": 754.78640224679953
           },
           "nodeIndex": "medidas",
           "nodeLineageTag": "fe7935fd-2148-4f3f-9a58-0d88e8c725b1",
@@ -33,10 +33,140 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 413.81330209965063,
+            "y": 567.00646003749569
+          },
+          "nodeIndex": "metadados_colunas",
+          "nodeLineageTag": "fe29898b-6f49-4400-b84a-147f364ce873",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1035.4894801891264,
+            "y": 307.56611507626224
+          },
+          "nodeIndex": "metadados_medidas",
+          "nodeLineageTag": "fac20d85-507c-4687-b324-35a3ec8c4a4c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 318.26626474857352,
+            "y": 313.4419350277949
+          },
+          "nodeIndex": "metadados_relacionamentos",
+          "nodeLineageTag": "0e68b11f-65a7-4aed-8322-a0ca57c55564",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 672.23313165572029,
+            "y": 201.65042973914677
+          },
+          "nodeIndex": "metadados_tabelas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1177.2674719399852,
+            "y": 378.42816724103307
+          },
+          "nodeIndex": "aux_testes",
+          "nodeLineageTag": "7f35fd94-5c1b-432c-8c82-0e5b6867a9a6",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
       "zoomValue": 80.588579337182281,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 268,
+            "y": 329
+          },
+          "nodeIndex": "metadados_colunas",
+          "nodeLineageTag": "fe29898b-6f49-4400-b84a-147f364ce873",
+          "size": {
+            "height": 300,
+            "width": 249
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 448,
+            "y": 0
+          },
+          "nodeIndex": "metadados_medidas",
+          "nodeLineageTag": "fac20d85-507c-4687-b324-35a3ec8c4a4c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 763,
+            "y": 49
+          },
+          "nodeIndex": "metadados_relacionamentos",
+          "nodeLineageTag": "0e68b11f-65a7-4aed-8322-a0ca57c55564",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 60,
+            "y": 0
+          },
+          "nodeIndex": "metadados_tabelas",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "metadados",
+      "zoomValue": 100,
       "pinKeyFieldsToTop": true,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

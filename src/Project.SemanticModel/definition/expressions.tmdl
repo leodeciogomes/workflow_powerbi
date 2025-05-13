@@ -1,0 +1,8 @@
+expression base_path = "C:\Users\leogo\OneDrive\Documentos\MeusProjetos\workflow_powerbi" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 61151197-452c-43c8-bc25-8e39598b949e
+	queryGroup: parametros
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

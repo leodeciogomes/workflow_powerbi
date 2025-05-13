@@ -1,0 +1,168 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.7.0/schema.json",
+  "name": "6852d79b27d0d29e4264",
+  "position": {
+    "x": 435.29588014981272,
+    "y": 154.36704119850188,
+    "z": 0,
+    "height": 507.20599250936328,
+    "width": 747.86516853932585,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aux_testes"
+                    }
+                  },
+                  "Property": "test_name"
+                }
+              },
+              "queryRef": "aux_testes.test_name",
+              "nativeQueryRef": "test_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aux_testes"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "aux_testes.category",
+              "nativeQueryRef": "category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aux_testes"
+                    }
+                  },
+                  "Property": "expected_value"
+                }
+              },
+              "queryRef": "aux_testes.expected_value",
+              "nativeQueryRef": "expected_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aux_testes"
+                    }
+                  },
+                  "Property": "actual_value"
+                }
+              },
+              "queryRef": "aux_testes.actual_value",
+              "nativeQueryRef": "actual_value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "aux_testes"
+                    }
+                  },
+                  "Property": "result"
+                }
+              },
+              "queryRef": "aux_testes.result",
+              "nativeQueryRef": "result"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "286.47565543071164D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aux_testes.test_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.80524344569288D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aux_testes.category"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.67041198501873D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aux_testes.expected_value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "105.01123595505618D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aux_testes.actual_value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.64044943820224D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "aux_testes.result"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
